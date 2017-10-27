@@ -1,7 +1,3 @@
-#include <socket.h>
-#include "utils.c++"
-#include <netinet/in.h>
-#include <pthread.h>
 #include "entity.h"
 entity::entity(string myip, string peerip, int myPort,	int peerPort)
 {
@@ -13,17 +9,21 @@ entity::entity(string myip, string peerip, int myPort,	int peerPort)
 
 
 }
-entity::getentsock(){
+udpsocket * entity::getentsock(){
   return entsock;
 }
-entity::getpeerAddress(){
+string entity::getpeerAddress(){
   return peerAddress;
 }
-entity::getmyAddress()
+string entity::getmyAddress()
 {
   return myAddress;
 }
-entity::myPort()
+int entity::getmyPort()
 {
   return myPort;
+}
+int entity::getpeerPort()
+{
+  return peerPort;
 }

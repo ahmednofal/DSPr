@@ -1,12 +1,15 @@
 #ifndef CLIENT_H
 #define CLIENT_H
 #include "entity.h"
-class Client:public entity
+#include "utils.c++"
+#include <sys/socket.h>
+#include <string>
+
+class clientx:public entity
 {
 	public:
-		//string myip, string peerip, int myPort,	int peerPort
-		Client(string myip, string peerip, int myPort, int peerPort);
-		Message * execute(Message * _message);
-		~Client();
+		clientx(string myip, string peerip, int myPort, int peerPort);
+		void DoOperation(string message);
+		~clientx();
 };
 #endif // CLIENT_H

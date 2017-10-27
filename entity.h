@@ -1,10 +1,10 @@
-#include <socket.h>
+#include <sys/socket.h>
 #include "utils.c++"
 #include <netinet/in.h>
 #include <pthread.h>
 #include "udpsocket.h"
 #include <string>
-
+using namespace std;
 class entity{
 private:
 udpsocket * entsock;
@@ -14,8 +14,12 @@ string peerAddress;
 int peerPort;
 public:
   entity(string myip, string peerip, int myPort,	int peerPort);
-  // setSockInfo(string myip, string peerip, int myPort,	int peerPort);
-  udpsocket sock ();
+  udpsocket * getentsock();
+  int getMyPort();
+  int getPeerPort();
+  string getmyAddress();
+  string getpeerAddress();
+
 
   ~entity();
 

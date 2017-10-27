@@ -1,7 +1,7 @@
 #include <udpsocket.h>
 #include "utils.cpp"
 #include <string>
-
+using namespace std;
 udpsocket::udpsocket(string myipaddress,int myport,string peeripaddress,int peerport)
 {
 	/*
@@ -34,4 +34,7 @@ udpsocket::udpsocket(string myipaddress,int myport,string peeripaddress,int peer
 	// The interpretation of makeDestSA expect a string of the host name
 	makeDestSA(&peerSA,hostname, peerPort);
 
+}
+int udpsocket::getsock(){
+	return sock;
 }

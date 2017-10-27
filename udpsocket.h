@@ -2,13 +2,15 @@
 #define UDPSOCKET_H
 #include <netinet/in.h>
 #include <pthread.h>
+#include <string>
 
+using namespace std;
 class udpsocket
 {
 	protected:
 	int sock;
-	sockaddr_in mySAddr;
-	sockaddr_in	peerSAddr;
+	sockaddr_in mySA;
+	sockaddr_in	peerSA;
 	string myAddress;
 	string peerAddress;
 	int myPort;
@@ -17,6 +19,7 @@ class udpsocket
 	pthread_mutex_t mutex;
 	public:
 	udpsocket(string myAddress,int myPort,string peerAddress,int peerPort);
+	int getsock();
 	int getMyPort ();
 	int getPeerPort ();
 	void enable();
@@ -25,6 +28,6 @@ class udpsocket
 	void lock();
 	void unlock();
 	int getSocketHandler();
-	~UDPSocket ( );
+	~udpsocket();
 };
 #endif // UDPSOCKET_H
