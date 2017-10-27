@@ -15,6 +15,8 @@ int peerPort;
 public:
   entity(string myip, string peerip, int myPort,	int peerPort);
   // setSockInfo(string myip, string peerip, int myPort,	int peerPort);
+  udpsocket sock ();
+
   ~entity();
 
 };

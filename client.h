@@ -4,7 +4,8 @@
 class Client:public entity
 {
 	public:
-		Client(char * _hostname, int _port);
+		//string myip, string peerip, int myPort,	int peerPort
+		Client(string myip, string peerip, int myPort, int peerPort);
 		Message * execute(Message * _message);
 		~Client();
 };

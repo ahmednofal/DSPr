@@ -13,3 +13,17 @@ entity::entity(string myip, string peerip, int myPort,	int peerPort)
 
 
 }
+entity::getentsock(){
+  return entsock;
+}
+entity::getpeerAddress(){
+  return peerAddress;
+}
+entity::getmyAddress()
+{
+  return myAddress;
+}
+entity::myPort()
+{
+  return myPort;
+}

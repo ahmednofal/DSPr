@@ -3,11 +3,12 @@
 #include <socket.h>
 using namespace std;
 
-Client::Client(char * _hostname, int _port)
+Client::Client(string myip, string peerip, int myPort, int peerPort) : entity(myip, peerip, myPort, peerPort)
 {
-	
+
+
 }
-Client::
+
 Client::Message * execute ( Message* _message)
 {
 

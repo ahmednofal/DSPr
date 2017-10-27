@@ -1,5 +1,5 @@
 #include <udpsocket.h>
-#include "utils.h"
+#include "utils.cpp"
 #include <string>
 
 udpsocket::udpsocket(string myipaddress,int myport,string peeripaddress,int peerport)
